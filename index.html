@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarklet Utility</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/favicon.png"> <!-- Favicon added -->
+</head>
+<body>
+    <div class="container">
+        <h1>📌 Bookmarklet Utility</h1>
+
+        <!-- Bookmarklet Generator -->
+        <div class="generator">
+            <h2>Generate a Bookmarklet</h2>
+            <textarea id="jsCode" placeholder="Enter JavaScript code here..."></textarea>
+            <button onclick="generateBookmarklet()">🔗 Generate Bookmarklet</button>
+            <div id="bookmarkletActions" style="display: none;">
+                <a id="bookmarkletLink" class="drag-btn">📌 Drag to Bookmark Bar</a>
+                <button onclick="testGeneratedBookmarklet()">▶️ Test</button>
+                <button onclick="addGeneratedBookmarklet()">➕ Add to Collection</button>
+            </div>
+        </div>
+
+        <!-- Bookmarklet Tester -->
+        <div class="tester">
+            <h2>Test a Bookmarklet</h2>
+            <input type="text" id="testCode" placeholder="Paste bookmarklet code here">
+            <button onclick="testBookmarklet()">▶️ Run Bookmarklet</button>
+        </div>
+
+        <!-- Bookmarklet Collection -->
+        <div class="manual-add">
+            <h2>Add a Bookmarklet</h2>
+            <input type="text" id="bookmarkletName" placeholder="Bookmarklet Name">
+            <textarea id="bookmarkletCode" placeholder="Enter JavaScript code here..."></textarea>
+            <button onclick="addBookmarklet()">➕ Add Bookmarklet</button>
+        </div>
+
+        <div class="collection">
+            <h2>Saved Bookmarklets</h2>
+            <ul id="bookmarkletList"></ul>
+        </div>
+
+        <!-- Context Menu -->
+        <div id="contextMenu" class="context-menu">
+            <button id="copyBtn">📋 Copy</button>
+            <button id="deleteBtn">🗑️ Delete</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
